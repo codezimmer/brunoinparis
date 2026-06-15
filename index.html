@@ -175,6 +175,9 @@ const DAYS = [
    sub:"The Left Bank's literary heart — café terraces, art galleries and Le Bon Marché.",
    wx:"≈31° · Hot & sunny ☀",dress:"Light, breathable clothes — come comfortable, Paris Buenos Aires is a down-to-earth room.",
    c1:"#C6FF3A",c2:"#00E0B8",cards:[
+   { time:"Afternoon · check-in",name:"Hôtel Le Sénat",type:"Saint-Germain · home base",stamp:"CHECK-IN",
+     body:"Your base for the week — a quietly elegant 1866 townhouse on rue de Vaugirard, a minute from the <b>Jardin du Luxembourg</b> and the heart of Saint-Germain-des-Prés. Soundproofed rooms, a small bar for a nightcap, and a buffet breakfast in the morning. Drop the bags, freshen up, and stroll over to dinner.",
+     meta:[["Check-in","From 3:00 pm"],["Where","10 rue de Vaugirard, 75006"],["Breakfast","Mon–Fri 7:00–10:30 · Sat–Sun 7:00–11:00"]] },
    { time:"Dinner · 8:30 pm",name:"Paris Buenos Aires",type:"Argentinian fire-grill",stamp:"8:30",
      body:"Chef Fernando de Tomaso (of Biondi) bridges his two cities over live embers — golden empanadas and premium grilled beef in a candlelit room of wood and leather, near Le Bon Marché. <b>Order the côte de bœuf à partager with a Saint-Émilion grand cru.</b>",
      meta:[["Booked","Table at 8:30 pm"],["Where","11 rue Dupin, 75006"],["Hours","Mon–Sat · 19:00–23:00"]] }]},
@@ -258,7 +261,8 @@ function meta(m){return `<div class="meta">${m.map(r=>`<div class="row"><span cl
 function mapsFor(name){
   const U=q=>'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(q);
   let L=[];
-  if(name.includes('Buenos Aires')) L=[['Map',U('Paris Buenos Aires 11 rue Dupin 75006 Paris')]];
+  if(name.includes('Sénat')) L=[['Map',U('Hôtel Le Sénat 10 rue de Vaugirard 75006 Paris')]];
+  else if(name.includes('Buenos Aires')) L=[['Map',U('Paris Buenos Aires 11 rue Dupin 75006 Paris')]];
   else if(name.includes('Bam Karaoke')) L=[['Map',U('BAM Karaoke Box Madeleine 4 rue de Caumartin 75009 Paris')]];
   else if(name==='Tycoz') L=[['Map',U('Tycoz Crêperie Oyster Bar 4 rue du Parc Royal 75003 Paris')]];
   else if(name.includes('Bruno Mars')) L=[['Map',U('Stade de France Saint-Denis')]];
